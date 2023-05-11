@@ -7,7 +7,8 @@ pipeline {
         stage("Build") {
             steps {
                 sh "npm install"
-                sh "npm run build"
+                echo 'Building NextJS App'
+		      sh 'node_modules/next/dist/bin/next build'
             }
         }
         stage("Deploy") {
